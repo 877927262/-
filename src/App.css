@@ -1,0 +1,59 @@
+
+.App {
+}
+
+h4{
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    line-height: 43px;
+    width: 65px;
+    margin: 0 auto;
+}
+.active{
+    border-bottom: 2px solid red;
+}
+.choose{
+    height: 45px;
+    line-height: 45px;
+}
+.user{
+    height: 44px;
+    padding:12px 0;
+    line-height: 44px;
+}
+.user component:nth-child(1){
+    text-align: center;
+}
+.user component:nth-child(1) img{
+    margin-top: 10px;
+}
+.user component:nth-child(2){
+    flex-grow: 0.7;
+}
+.user component:nth-child(3){
+    flex-grow: 2;
+}
+.user component:nth-child(3) div:first-child{
+    font-size: 16px;
+    color:#000;
+    line-height: 23px;
+
+}
+.user component:nth-child(3) div:nth-child(2){
+    font-size: 13px;
+    color:#999999;
+    margin-top: -12px;
+}
+hr{
+    width: 80%;
+    float: right;
+    color: #ccc;
+    border: 0.5px solid #ccc;
+}
+.user component:nth-child(4){
+    text-align: center;
+}
+.rankingList{
+    border-top: 12px solid #ccc;
+}
