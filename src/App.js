@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Button,
         Flex,
-        FlexItem
+        FlexItem,
+        LoadMore
         } from 'react-weui';
 import 'weui';
 import 'react-weui/build/packages/react-weui.css';
@@ -54,8 +54,8 @@ class App extends Component {
                     </Flex>
                 </div>
                 <hr/>
-
             </div>
+            <LoadMore loading>Loading</LoadMore>
       </div>
     );
   }
