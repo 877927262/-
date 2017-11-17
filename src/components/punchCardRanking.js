@@ -1,3 +1,4 @@
+//这是打卡榜组件
 import React, { Component } from 'react';
 import { Button,
         Flex,
@@ -6,11 +7,9 @@ import { Button,
         } from 'react-weui';
 import 'weui';
 import 'react-weui/build/packages/react-weui.css';
-import './App.css';
-import UserList from './components/userList';
-import ReactRouter from 'react-router'
-
-class App extends Component {
+import '../App.css';
+import UserList from './userList';
+class punchCardRanking extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -61,46 +60,44 @@ class App extends Component {
                 punchedNumber:999
             }]
         };
-
     }
 
-      render() {
-        //循环渲染用户信息
-        const rankingList = this.state.user.map((item,index)=>{
-            return (
-                <UserList key={index}
-                ranking={item.ranking}
-                name={item.name}
-                studentNumber={item.studentNumber}
-                punchedNumber={item.punchedNumber}
-                headPortrait = {<img src="images/2.png" alt="头像"/>}
-                />
-            )
-        })
-        return (
+    render() {
+      //循环渲染用户信息
+      const rankingList = this.state.user.map((item,index)=>{
+          return (
+              <UserList key={index}
+              ranking={item.ranking}
+              name={item.name}
+              studentNumber={item.studentNumber}
+              punchedNumber={item.punchedNumber}
+              headPortrait = {<img src="images/2.png" alt="头像"/>}
+              />
+          )
+      })
+      return (
 
-          <div className="App">
-                <div className="choose">
-                    <Flex>
-                        <FlexItem><h4 className="active">打卡榜</h4></FlexItem>
-                        <FlexItem><h4>报班榜</h4></FlexItem>
-                    </Flex>
-                </div>
-                <div className="user">
-                    <Flex>
-                        <FlexItem id="userRanking">9</FlexItem>
-                        <FlexItem><img src="images/2.png" alt="头像"/></FlexItem>
-                        <FlexItem><div>Jason Wang</div><div>Junior</div></FlexItem>
-                        <FlexItem>44</FlexItem>
-                    </Flex>
-                </div>
-                <div className="ranking-list">
-                    {rankingList}
-                </div>
-                <LoadMore loading>Loading</LoadMore>
-           </div>
-        );
-      }
+        <div className="App">
+              <div className="choose">
+                  <Flex>
+                      <FlexItem><h4 className="active">打卡榜</h4></FlexItem>
+                      <FlexItem><h4>报班榜</h4></FlexItem>
+                  </Flex>
+              </div>
+              <div className="user">
+                  <Flex>
+                      <FlexItem id="userRanking">9</FlexItem>
+                      <FlexItem><img src="images/2.png" alt="头像"/></FlexItem>
+                      <FlexItem><div>Jason Wang</div><div>Junior</div></FlexItem>
+                      <FlexItem>44</FlexItem>
+                  </Flex>
+              </div>
+              <div className="ranking-list">
+                  {rankingList}
+              </div>
+              <LoadMore loading>Loading</LoadMore>
+         </div>
+      );
+    }
 }
-
-export default App;
+export default UserList;
