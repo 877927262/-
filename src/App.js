@@ -1,104 +1,55 @@
 import React, { Component } from 'react';
-import { Button,
-        Flex,
-        FlexItem,
-        LoadMore
-        } from 'react-weui';
 import 'weui';
+import {Flex,
+        FlexItem
+        } from 'react-weui';
 import 'react-weui/build/packages/react-weui.css';
 import './App.css';
 import UserList from './components/userList';
-import ReactRouter from 'react-router'
+import PunchCardRanking from './components/punchCardRanking'
+import {BrowserRouter as Router,
+        Route,
+        Link
+    } from 'react-router-dom';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user:[{
-                ranking:1,
-                name:'gjf',
-                studentNumber:1414103032,
-                punchedNumber:111
-            },{
-                ranking:2,
-                name:'hehe',
-                studentNumber:1414103032,
-                punchedNumber:222
-            },{
-                ranking:3,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:333
-            },{
-                ranking:4,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:444
-            },{
-                ranking:5,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:555
-            },{
-                ranking:6,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:666
-            },{
-                ranking:7,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:777
-            },{
-                ranking:8,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:888
-            },{
-                ranking:9,
-                name:'heihei',
-                studentNumber:1414103032,
-                punchedNumber:999
-            }]
-        };
+      constructor(props) {
+          super(props);
+          this.state = {
+              active:true
+          };
+          this.changePuchCard = this.changePuchCard.bind(this);
+          this.changeUserList = this.changeUserList.bind(this);
+      }
+      //点击打卡榜下边框变红
+      changePuchCard () {
+          this.setState({
+              active : true
+          })
+      }
+      //点击报班榜下边框变红
+      changeUserList () {
+          this.setState({
+              active : false
+          })
+      }
 
-    }
 
       render() {
-        //循环渲染用户信息
-        const rankingList = this.state.user.map((item,index)=>{
-            return (
-                <UserList key={index}
-                ranking={item.ranking}
-                name={item.name}
-                studentNumber={item.studentNumber}
-                punchedNumber={item.punchedNumber}
-                headPortrait = {<img src="images/2.png" alt="头像"/>}
-                />
-            )
-        })
         return (
 
-          <div className="App">
-                <div className="choose">
-                    <Flex>
-                        <FlexItem><h4 className="active">打卡榜</h4></FlexItem>
-                        <FlexItem><h4>报班榜</h4></FlexItem>
-                    </Flex>
+            <Router>
+                <div>
+                    <div className="choose">
+                        <Flex>
+                            <FlexItem><h4 className={this.state.active ? 'active':'none'} ><Link to="/" onClick={this.changePuchCard}>打卡榜</Link></h4></FlexItem>
+                            <FlexItem><h4 className={this.state.active ? 'none':'active'}><Link to="/enrol" onClick={this.changeUserList}>报班榜</Link></h4></FlexItem>
+                        </Flex>
+                    </div>
+                    <Route exact path="/" component={PunchCardRanking}/>
+                    <Route exact path="/enrol" component={UserList}/>
                 </div>
-                <div className="user">
-                    <Flex>
-                        <FlexItem id="userRanking">9</FlexItem>
-                        <FlexItem><img src="images/2.png" alt="头像"/></FlexItem>
-                        <FlexItem><div>Jason Wang</div><div>Junior</div></FlexItem>
-                        <FlexItem>44</FlexItem>
-                    </Flex>
-                </div>
-                <div className="ranking-list">
-                    {rankingList}
-                </div>
-                <LoadMore loading>Loading</LoadMore>
-           </div>
+            </Router>
         );
       }
 }

@@ -1,7 +1,6 @@
 //这是打卡榜组件
 import React, { Component } from 'react';
-import { Button,
-        Flex,
+import {Flex,
         FlexItem,
         LoadMore
         } from 'react-weui';
@@ -78,15 +77,9 @@ class punchCardRanking extends Component {
       return (
 
         <div className="App">
-              <div className="choose">
-                  <Flex>
-                      <FlexItem><h4 className="active">打卡榜</h4></FlexItem>
-                      <FlexItem><h4>报班榜</h4></FlexItem>
-                  </Flex>
-              </div>
               <div className="user">
                   <Flex>
-                      <FlexItem id="userRanking">9</FlexItem>
+                      <FlexItem id="userRanking">999+</FlexItem>
                       <FlexItem><img src="images/2.png" alt="头像"/></FlexItem>
                       <FlexItem><div>Jason Wang</div><div>Junior</div></FlexItem>
                       <FlexItem>44</FlexItem>
@@ -100,4 +93,4 @@ class punchCardRanking extends Component {
       );
     }
 }
-export default UserList;
+export default punchCardRanking;
