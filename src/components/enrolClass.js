@@ -1,4 +1,4 @@
-//这是打卡榜组件
+// 这是报班榜组件
 import React, { Component } from 'react';
 import {Flex,
         FlexItem,
@@ -8,7 +8,7 @@ import 'weui';
 import 'react-weui/build/packages/react-weui.css';
 import '../App.css';
 import UserList from './userList';
-class punchCardRanking extends Component {
+class EnrolClass extends Component {
     constructor(props) {
         super(props);
         this.withDrawalRanking = this.withDrawalRanking.bind(this);
@@ -113,4 +113,4 @@ class punchCardRanking extends Component {
       );
     }
 }
-export default punchCardRanking;
+export default EnrolClass;

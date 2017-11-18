@@ -6,17 +6,19 @@ import {Flex,
 import 'react-weui/build/packages/react-weui.css';
 import './App.css';
 import UserList from './components/userList';
+import EnrolClass from  './components/enrolClass';
+
 import PunchCardRanking from './components/punchCardRanking'
 import {BrowserRouter as Router,
         Route,
         Link
     } from 'react-router-dom';
-
 class App extends Component {
       constructor(props) {
           super(props);
           this.state = {
-              active:true
+              active:true,
+
           };
           this.changePuchCard = this.changePuchCard.bind(this);
           this.changeUserList = this.changeUserList.bind(this);
@@ -47,7 +49,7 @@ class App extends Component {
                         </Flex>
                     </div>
                     <Route exact path="/" component={PunchCardRanking}/>
-                    <Route exact path="/enrol" component={UserList}/>
+                    <Route exact path="/enrolClass" component={UserList}/>
                 </div>
             </Router>
         );
