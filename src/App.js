@@ -45,11 +45,11 @@ class App extends Component {
                     <div className="choose">
                         <Flex>
                             <FlexItem><h4 className={this.state.active ? 'active':'none'} ><Link to="/" onClick={this.changePuchCard}>打卡榜</Link></h4></FlexItem>
-                            <FlexItem><h4 className={this.state.active ? 'none':'active'}><Link to="/enrol" onClick={this.changeUserList}>报班榜</Link></h4></FlexItem>
+                            <FlexItem><h4 className={this.state.active ? 'none':'active'}><Link to="/enrolClass" onClick={this.changeUserList}>报班榜</Link></h4></FlexItem>
                         </Flex>
                     </div>
                     <Route exact path="/" component={PunchCardRanking}/>
-                    <Route exact path="/enrolClass" component={UserList}/>
+                    <Route path="/enrolClass" component={EnrolClass}/>
                 </div>
             </Router>
         );

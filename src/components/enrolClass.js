@@ -18,54 +18,64 @@ class EnrolClass extends Component {
                 ranking:100000,
                 name:'guojianfei',
                 studentNumber:6666666,
-                punchedNumber:1
+                punchedNumber:1,
+                classNumber:11
             },
             //其他人的信息
             user:[{
                 ranking:1,
                 name:'gjf',
                 studentNumber:1414103032,
-                punchedNumber:111
+                punchedNumber:111,
+                classNumber:22
             },{
                 ranking:2,
                 name:'hehe',
                 studentNumber:1414103032,
-                punchedNumber:222
+                punchedNumber:222,
+                classNumber:33
             },{
                 ranking:3,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:333
+                punchedNumber:333,
+                classNumber:44
             },{
                 ranking:4,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:444
+                punchedNumber:444,
+                classNumber:55
             },{
                 ranking:5,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:555
+                punchedNumber:555,
+                classNumber:66
             },{
                 ranking:6,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:666
+                punchedNumber:666,
+                classNumber:77
             },{
                 ranking:7,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:777
+                punchedNumber:777,
+                classNumber:88
             },{
                 ranking:8,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:888
+                punchedNumber:888,
+                classNumber:99
             },{
                 ranking:9,
                 name:'heihei',
                 studentNumber:1414103032,
-                punchedNumber:999
+                punchedNumber:999,
+                classNumber:789
             }]
         };
     }
@@ -88,7 +98,7 @@ class EnrolClass extends Component {
                   ranking={item.ranking}
                   name={item.name}
                   studentNumber={item.studentNumber}
-                  punchedNumber={item.punchedNumber}
+                  punchedNumber={item.classNumber}
                   headPortrait = {<img src="images/2.png" alt="头像"/>}
                   />
               )
@@ -102,7 +112,7 @@ class EnrolClass extends Component {
                       <FlexItem id="userRanking">{this.withDrawalRanking(this.state.userInfo.ranking)}</FlexItem>
                       <FlexItem><img src="images/2.png" alt="头像"/></FlexItem>
                       <FlexItem><div>{this.state.userInfo.name}</div><div>{this.state.userInfo.studentNumber}</div></FlexItem>
-                      <FlexItem>{this.state.userInfo.punchedNumber}</FlexItem>
+                      <FlexItem>{this.state.userInfo.classNumber}</FlexItem>
                   </Flex>
               </div>
               <div className="ranking-list">
